@@ -1,7 +1,7 @@
 ## Basic concepts:
 
-Each data layer shows spatial-temporal aggregated values by each geometry and selected slice duration. For instance, hourly (`PT1H`), daily (`P1D`), weekly (`P1W`) are a slice durations. They have a special iso format [https://en.wikipedia.org/wiki/ISO_8601].
-Each cell on the map - is object, which is built by quad tile index algorithm [https://wiki.openstreetmap.org/wiki/QuadTiles].We can set different `zoom level` parameter for spatial cell size. `zoom level` value can be between 1 and 26.
+Each data layer shows spatial-temporal aggregated values by each geometry and selected slice duration. For instance, hourly (`PT1H`), daily (`P1D`), weekly (`P1W`) are a slice durations. They have a [special iso format](https://en.wikipedia.org/wiki/ISO_8601).
+Each cell on the map - is object, which is built by [quad tile index algorithm](https://wiki.openstreetmap.org/wiki/QuadTiles). We can set different `zoom level` parameter for spatial cell size. `zoom level` value can be between 1 and 26.
 
 Sometimes you need to get average values of slices between specific time intervals. To do this you need set `requestType` parameter for endpoints with data retrieving. This parameter has a two available values: `slice` and `range`. It should be noted that, depending on this parameter, the names of the properties of each cell will differ. For instance, if you request data with `range` request type you get a key `range` in properties by each geometry. But for `slice` request type you get multiple keys in properties, data by each slice in ISO datetime format, for example, `2020-01-01T00:00:00`.
 
